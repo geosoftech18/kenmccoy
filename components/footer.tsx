@@ -21,16 +21,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#181F2F] text-white" >
+    <footer className="bg-[#35363A] text-white" >
       {/* Main Footer Content */}
       <div className="container mx-auto px-8 pt-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
             <div className="group">
-              <div className="w-48 h-20 mb-4">
+              <div className="w-44 h-20 mb-4">
                 <img
-                  src="/footer-logo.png?height=64&width=160"
+                  src="/footer-logo.jpeg?height=64&width=160"
                   alt="Kenmccoy Logo"
                   className="w-full h-full object-contain filter  "
                 />
@@ -241,7 +241,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-400 text-sm">
-              © {currentYear} Ken McCoy Consulting. All rights reserved.
+            All rights reserved © {currentYear} Ken McCoy Consulting. 
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link href="/#" className="text-gray-400 hover:text-white transition-colors duration-200">
