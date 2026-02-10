@@ -29,8 +29,9 @@ export async function GET(request: NextRequest) {
       ]
     }
 
-    // Fetch posts
+    // Fetch posts - only select fields we need for listing (exclude content for performance)
     const posts = await Blog.find(query)
+      .select('title excerpt tags status featuredImage slug createdAt updatedAt') // Only fetch needed fields
       .sort({ createdAt: -1 }) // Newest first
       .lean() // Convert to plain JavaScript objects
 
@@ -38,7 +39,6 @@ export async function GET(request: NextRequest) {
     const formattedPosts = posts.map((post: any) => ({
       _id: post._id.toString(),
       title: post.title,
-      content: post.content,
       excerpt: post.excerpt,
       tags: post.tags,
       status: post.status,
@@ -48,10 +48,18 @@ export async function GET(request: NextRequest) {
       updatedAt: post.updatedAt.toISOString()
     }))
 
-    return NextResponse.json({
+    // Add caching headers for better performance
+    const response = NextResponse.json({
       success: true,
       data: formattedPosts
     })
+
+    // Cache for 60 seconds if fetching published posts only
+    if (status === 'published') {
+      response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300')
+    }
+
+    return response
   } catch (error: any) {
     console.error('Error fetching blog posts:', error)
     return NextResponse.json(

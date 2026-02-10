@@ -237,7 +237,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 bg-gray-800" style={{ background: 'linear-gradient(135deg, #1f2937 0%, #111827 100%)' }}>
+      <div className="border-t border-gray-700 ">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-400 text-sm">

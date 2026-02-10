@@ -62,6 +62,7 @@ export default function Header() {
             </Link>
             <Link 
               href="/blog" 
+              prefetch={true}
               className="relative px-4 py-2 font-medium text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200  group"
             >
               Blog
@@ -138,6 +139,7 @@ export default function Header() {
               </Link>
               <Link 
                 href="/blog" 
+                prefetch={true}
                 className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
