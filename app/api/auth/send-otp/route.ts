@@ -2,8 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { setOTP } from '@/lib/otp-store'
 
-// Authorized admin email
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'khandekarpranav52@gmail.com'
+// Get authorized admin emails - support multiple emails (comma-separated)
+// Default to info@kenmccoy.in for production
+function getAuthorizedEmails(): string[] {
+  const envEmails = process.env.ADMIN_EMAIL || process.env.ADMIN_EMAILS || 'info@kenmccoy.in'
+  return envEmails.split(',').map(email => email.trim().toLowerCase()).filter(Boolean)
+}
+
+const AUTHORIZED_EMAILS = getAuthorizedEmails()
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,7 +17,7 @@ export async function POST(request: NextRequest) {
     const { email } = body
 
     // Validate email
-    if (!email || email !== ADMIN_EMAIL) {
+    if (!email || !AUTHORIZED_EMAILS.includes(email.toLowerCase())) {
       return NextResponse.json(
         { 
           success: false, 

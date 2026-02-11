@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -16,18 +16,41 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
-// For client-side components, use NEXT_PUBLIC_ prefix
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL
-
 export default function AdminLoginPage() {
   const router = useRouter()
-  const [email, setEmail] = useState(ADMIN_EMAIL)
+  const [email, setEmail] = useState('')
+  const [loadingEmail, setLoadingEmail] = useState(true)
   const [otp, setOtp] = useState('')
   const [step, setStep] = useState<'email' | 'otp'>('email')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
   const [displayOtp, setDisplayOtp] = useState('')
+
+  // Fetch authorized email on mount
+  useEffect(() => {
+    const fetchAuthorizedEmail = async () => {
+      try {
+        const response = await fetch('/api/auth/authorized-email')
+        const result = await response.json()
+        
+        if (result.success && result.email) {
+          setEmail(result.email)
+        } else {
+          // Fallback to default
+          setEmail('info@kenmccoy.in')
+        }
+      } catch (error) {
+        console.error('Error fetching authorized email:', error)
+        // Fallback to default
+        setEmail('info@kenmccoy.in')
+      } finally {
+        setLoadingEmail(false)
+      }
+    }
+
+    fetchAuthorizedEmail()
+  }, [])
 
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -162,11 +185,11 @@ export default function AdminLoginPage() {
                   <Input
                     id="email"
                     type="email"
-                   
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="admin@example.com"
                     required
-                    
+                    disabled={loadingEmail}
                     className="bg-muted border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-accent/20 rounded-xl h-12"
                   />
                   <p className="text-muted-foreground text-xs">
