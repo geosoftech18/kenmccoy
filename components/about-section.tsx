@@ -39,7 +39,7 @@ export default function AboutSection() {
   const [hoveredValue, setHoveredValue] = useState<number | null>(null)
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-16 lg:py-24 overflow-hidden">
+    <section className="bg-gradient-to-br from-muted/40 to-background py-16 lg:py-24 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -50,7 +50,7 @@ export default function AboutSection() {
                 <span className="  px-3 py-1 rounded-lg"> One Connection at a Time</span>
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Every partnership we build fuels progress — for individuals, teams, and industries. This is more than staffing — it’s about creating lasting impact.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function AboutSection() {
               return (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="group relative bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-border"
                   onMouseEnter={() => setHoveredValue(index)}
                   onMouseLeave={() => setHoveredValue(null)}
                 >
@@ -147,14 +147,14 @@ export default function AboutSection() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-accent transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{value.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{value.description}</p>
 
                   {/* Hover Arrow */}
                   <div
-                    className={`flex items-center text-blue-600 text-sm font-medium transition-all duration-300 ${hoveredValue === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`}
+                    className={`flex items-center text-accent text-sm font-medium transition-all duration-300 ${hoveredValue === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`}
                   >
                     <span className="mr-2">Learn more</span>
                     <ArrowRight className="w-4 h-4" />

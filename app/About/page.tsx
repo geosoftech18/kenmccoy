@@ -160,7 +160,7 @@ export default function AboutPage() {
   const prevTimeline = () => setTimelineSlide((p) => (p - 1 + 2) % 2)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="about-page-light min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
       <section className="relative  bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 lg:py-36 py-16 px-4 overflow-hidden">
@@ -174,7 +174,7 @@ export default function AboutPage() {
           <p className="text-xl md:text-3xl text-muted-foreground mb-6 max-w-4xl mx-auto font-light">
             Leadership Advisory Organization
           </p>
-          <p className="md:text-lg text-md text-foreground/80 mb-10 max-w-5xl mx-auto leading-relaxed">
+          <p className="md:text-lg text-md text-foreground mb-10 max-w-5xl mx-auto leading-relaxed">
             Established by experienced professionals from almost all fields of modern industry, we deliver a thoughtful
             approach for selecting the best fit through scientific, psychological, skill and competency-based methods.
           </p>
@@ -183,7 +183,7 @@ export default function AboutPage() {
               Discover Our Approach
             </Button>
            
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-2 bg-transparent" onClick={() => {
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-2 border-[#1e293b] text-[#1e293b] bg-transparent hover:bg-[#1e293b]/10 hover:text-[#1e293b]" onClick={() => {
               setTimeout(() => {
                 const element = document.getElementById('About-video-section');
                 if (element) {
@@ -308,16 +308,16 @@ export default function AboutPage() {
                 Redefining Leadership Recruitment
               </h2>
               <div className="space-y-6">
-                <p className="text-lg text-foreground/80 leading-relaxed">
+                <p className="text-lg text-foreground leading-relaxed">
                   Ken McCoy is privileged to have distinguished Human Resources and Industry leaders as partners who
                   have led and mentored many Indian and Multinational firms of great repute.
                 </p>
-                <p className="text-lg text-foreground/80 leading-relaxed">
+                <p className="text-lg text-foreground leading-relaxed">
                   Our approach addresses the need of the day due to the dynamism of talents and industry today, ensuring
                   we find the perfect leadership match within the quickest possible time.
                 </p>
                 <div className="flex items-center gap-6 pt-4">
-                  <div className="text-center text-black">
+                  <div className="text-center text-foreground">
                     <CounterAnimation  end={500} suffix="+" duration={2500} />
                     <div className="text-sm text-muted-foreground">Leaders Placed</div>
                   </div>
@@ -341,7 +341,7 @@ export default function AboutPage() {
                 <img
                   src="/journey.jpg?height=500&width=500"
                   alt="Ken McCoy leadership team"
-                  className="rounded-2xl shadow-2xl w-full bg-gray-100"
+                  className="rounded-2xl shadow-2xl w-full bg-muted"
                 />
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10" />
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-2xl -z-10" />
@@ -356,7 +356,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 bg-[#3b82f6]/10 text-[#3b82f6] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4" />
               Company Timeline
             </div>
@@ -402,7 +402,7 @@ export default function AboutPage() {
                       {timeline.slice(slideIdx * 4, slideIdx * 4 + 4).map((item, i) => (
                         <Card
                           key={`${item.year}-${i}`}
-                          className="group relative overflow-hidden border-0 bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                          className="group relative overflow-hidden border-0 bg-card/90 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                         >
                           <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <CardHeader className="pb-4">
@@ -484,7 +484,7 @@ export default function AboutPage() {
                   const IconComponent = item.icon
                   return (
                     <div key={index} className="w-full flex-shrink-0 px-4">
-                      <Card className="border-0 shadow-2xl bg-gradient-to-br from-white via-white to-muted/10 mx-auto max-w-4xl min-h-[500px] relative overflow-hidden">
+                      <Card className="border-0 shadow-2xl bg-gradient-to-br from-card via-card to-muted/10 mx-auto max-w-4xl min-h-[500px] relative overflow-hidden">
                         {/* Background decoration */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-accent/5 to-transparent rounded-full -translate-y-32 translate-x-32" />
                         <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/5 to-transparent rounded-full translate-y-24 -translate-x-24" />
@@ -492,7 +492,7 @@ export default function AboutPage() {
                         <CardHeader className="md:pb-8 md:pt-12 relative z-10">
                           <div className="flex flex-col items-center text-center">
                             <div className="md:w-24 md:h-24 h-16 w-16 bg-gradient-to-br from-accent to-accent/80 rounded-3xl flex items-center justify-center mb-8 shadow-2xl transform hover:scale-110 transition-transform duration-300">
-                              <IconComponent className="md:w-12 md:h-12 w-8 h-8 text-blue-500 " />
+                              <IconComponent className="md:w-12 md:h-12 w-8 h-8 text-accent" />
                             </div>
                             <CardTitle className="text-2xl md:text-4xl font-bold font-red-hat-display text-primary md:mb-6">
                               {item.title}
@@ -623,7 +623,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-white to-muted/5 relative overflow-hidden hover:-translate-y-2">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card via-card to-muted/5 relative overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <CardHeader className="pb-6 pt-8 relative z-10">
                 <div className="flex items-center justify-between mb-6">
@@ -644,37 +644,37 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="pb-8 relative z-10">
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                   Chemicals
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       Engineering and Automobiles
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       Infrastructure 
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       Telecom and Electronic semiconductors
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       Energy & Utilities
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
+                  <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       Retail, FMCG & Pharma
@@ -684,15 +684,15 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-white to-muted/5 relative overflow-hidden hover:-translate-y-2">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card via-card to-muted/5 relative overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <CardHeader className="pb-6 pt-8 relative z-10">
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                    <Award className="w-8 h-8 text-[#3b82f6]" />
+                    <Award className="w-8 h-8 text-accent" />
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-[#3b82f6]">C-Level</div>
+                    <div className="text-2xl font-bold text-accent">C-Level</div>
                     <div className="text-xs text-muted-foreground">Focus</div>
                   </div>
                 </div>
@@ -707,29 +707,29 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl hover:from-primary/10 hover:to-primary/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-[#3b82f6] rounded-full"></div>
-                      <span className="font-medium">C-Suite Executives</span>
+                      <div className="w-3 h-3 bg-accent rounded-full"></div>
+                      <span className="font-medium text-foreground">C-Suite Executives</span>
                     </div>
                     <span className="text-sm text-muted-foreground">CEO, CTO, CFO</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl hover:from-primary/10 hover:to-primary/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-[#3b82f6] rounded-full"></div>
-                      <span className="font-medium">Vice Presidents</span>
+                      <div className="w-3 h-3 bg-accent rounded-full"></div>
+                      <span className="font-medium text-foreground">Vice Presidents</span>
                     </div>
                     <span className="text-sm text-muted-foreground">VP Level</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl hover:from-primary/10 hover:to-primary/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-[#3b82f6] rounded-full"></div>
-                      <span className="font-medium">Directors & GMs</span>
+                      <div className="w-3 h-3 bg-accent rounded-full"></div>
+                      <span className="font-medium text-foreground">Directors & GMs</span>
                     </div>
                     <span className="text-sm text-muted-foreground">Senior Level</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl hover:from-primary/10 hover:to-primary/5 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-[#3b82f6] rounded-full"></div>
-                      <span className="font-medium">Department Heads</span>
+                      <div className="w-3 h-3 bg-accent rounded-full"></div>
+                      <span className="font-medium text-foreground">Department Heads</span>
                     </div>
                     <span className="text-sm text-muted-foreground">Mid-Senior</span>
                   </div>
@@ -737,7 +737,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-white to-muted/5 relative overflow-hidden hover:-translate-y-2">
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card via-card to-muted/5 relative overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <CardHeader className="pb-6 pt-8 relative z-10">
                 <div className="flex items-center justify-between mb-6">
@@ -761,7 +761,7 @@ export default function AboutPage() {
                   <div className="relative">
                     <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl hover:from-accent/10 hover:to-accent/5 transition-all duration-300 cursor-pointer">
                       <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full"></div>
-                      <span className="font-medium">India</span>
+                      <span className="font-medium text-foreground">India</span>
                       <div className="ml-auto text-xs text-muted-foreground">Primary Hubs</div>
                     </div>
                   </div>
@@ -800,7 +800,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              className="bg-white hover:bg-gray-100 text-black px-8 py-3 text-lg font-semibold shadow-lg rounded-lg transition-colors duration-300"
+              className="bg-white hover:bg-white/90 text-[#1e293b] px-8 py-3 text-lg font-semibold shadow-lg rounded-lg transition-colors duration-300"
               onClick={() => window.location.href = '/Contact'}
             >
                 Schedule Consultation

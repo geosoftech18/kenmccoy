@@ -72,16 +72,16 @@ export default function VideoSection() {
 },]
 
   return (
-    <section className="bg-gray-50 py-16 lg:py-24">
+    <section className="bg-muted/30 dark:bg-muted/20 py-16 lg:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Header */}
           <div className="mb-8">
-            <p className="text-sm font-medium text-gray-600 uppercase tracking-wider mb-4">Experience Our Story in Motion</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 font-red-hat-display">
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">Experience Our Story in Motion</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 font-red-hat-display text-foreground">
             Experience Our Story in Motion
             </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Take a closer look at who we are, what we stand for, and how we connect talent with opportunity. Our journey, culture, and impact — all captured in one video.
             </p>
             <a href="/Contact">
@@ -131,7 +131,7 @@ export default function VideoSection() {
 
                   {/* Play Button */}
                   <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-gray-800 ml-1" />
+                    <Play className="w-8 h-8 text-foreground ml-1" />
                   </div>
                 </button>
                 </div>
@@ -156,8 +156,8 @@ export default function VideoSection() {
           </div>
 
           {/* Partner Logos */}
-          <div className="border-t border-gray-200 pt-8">
-            <p className="text-sm text-gray-500 mb-6">Trusted by leading companies</p>
+          <div className="border-t border-border pt-8">
+            <p className="text-sm text-muted-foreground mb-6">Trusted by leading companies</p>
             <div className="overflow-hidden relative">
               {/* Gradient masks for smooth fade effect */}
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>

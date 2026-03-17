@@ -145,7 +145,7 @@ export default function IndustriesSection() {
                 className={`flex-shrink-0 px-4 py-3 lg:px-1 lg:py-3 text-sm font-medium lg:tracking-tight tracking-wider transition-all duration-300 rounded-lg lg:rounded-none lg:border-b-2 lg:text-center ${
                   activeTab === tab
                     ? "bg-yellow-500/20 text-[#e67016] lg:bg-transparent lg:border-[#e67016]"
-                    : "text-gray-400 hover:text-white hover:bg-white/5 lg:hover:bg-transparent lg:border-transparent lg:hover:border-gray-600"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50 lg:hover:bg-transparent lg:border-transparent lg:hover:border-border"
                 }`}
               >
                 <span className="lg:break-words">{tab.replace(/_/g, ' ')}</span>

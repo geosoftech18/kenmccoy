@@ -74,16 +74,16 @@ export default function TestimonialsSection() {
   const current = testimonials[currentTestimonial]
 
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-muted/30 dark:bg-muted/20 py-16 lg:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center lg:text-left mb-12">
-            <p className="text-sm font-medium text-gray-600 uppercase tracking-wider font-red-hat-display mb-4">Customer Testimonials</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 font-red-hat-display">
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider font-red-hat-display mb-4">Customer Testimonials</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 font-red-hat-display text-foreground">
             What Our Clients & Candidates Say:
             </h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto lg:mx-0"></div>
+            <div className="w-16 h-1 bg-accent mx-auto lg:mx-0"></div>
           </div>
 
           {/* Testimonial Content */}
@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
               {/* Left Side - Image */}
               <div className="relative order-2 lg:order-1">
                 <div className="relative w-full max-w-md mx-auto lg:mx-0">
-                  <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
+                  <div className="aspect-square overflow-hidden rounded-lg bg-muted">
                     <img
                       src={current.image || "/placeholder.svg"}
                       alt={current.name}
@@ -105,8 +105,8 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Decorative Quote Mark */}
-                  <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-lg">
-                    <Quote className="w-8 h-8 text-gray-400" />
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-muted rounded-full flex items-center justify-center shadow-lg">
+                    <Quote className="w-8 h-8 text-muted-foreground" />
                   </div>
                 </div>
               </div>
@@ -115,9 +115,9 @@ export default function TestimonialsSection() {
               <div className="order-1 lg:order-2 space-y-6">
                 <div className="relative">
                   {/* Large Quote Mark */}
-                  <div className="absolute -top-4 -left-4 text-6xl text-gray-200 font-red-hat-display leading-none">"</div>
+                  <div className="absolute -top-4 -left-4 text-6xl text-muted-foreground/50 font-red-hat-display leading-none">"</div>
 
-                  <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed pl-8">
+                  <blockquote className="text-lg md:text-xl text-foreground leading-relaxed pl-8">
                     {current.quote}
                   </blockquote>
                 </div>
@@ -125,8 +125,8 @@ export default function TestimonialsSection() {
                 {/* Attribution */}
                 <div className="space-y-3">
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900">{current.name}</h4>
-                    <p className="text-gray-600">{current.title}</p>
+                    <h4 className="text-xl font-semibold text-foreground">{current.name}</h4>
+                    <p className="text-muted-foreground">{current.title}</p>
                   </div>
 
                   {/* Star Rating */}
@@ -145,7 +145,7 @@ export default function TestimonialsSection() {
                 // variant="outline"
                 // size="icon"
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border-2 hover:bg-blue-50 hover:border-blue-300"
+                className="w-12 h-12 rounded-full border-2 border-border hover:bg-accent/10 hover:border-accent"
               >
                 <ChevronLeft className="w-5 h-5" />
               </Button>
@@ -154,7 +154,7 @@ export default function TestimonialsSection() {
                 // variant="outline"
                 // size="icon"
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full border-2 hover:bg-blue-50 hover:border-blue-300"
+                className="w-12 h-12 rounded-full border-2 border-border hover:bg-accent/10 hover:border-accent"
               >
                 <ChevronRight className="w-5 h-5" />
               </Button>
@@ -170,7 +170,7 @@ export default function TestimonialsSection() {
                     setAutoPlayPaused(true)
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? "bg-blue-600 scale-125" : "bg-gray-300 hover:bg-gray-400"
+                    index === currentTestimonial ? "bg-accent scale-125" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   }`}
                 />
               ))}
@@ -178,9 +178,9 @@ export default function TestimonialsSection() {
 
             {/* Auto-play Status Indicator */}
             <div className="flex items-center justify-center lg:justify-start mt-4">
-              <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <div
-                  className={`w-2 h-2 rounded-full ${isAutoPlaying && !autoPlayPaused ? "bg-green-400 animate-pulse" : "bg-gray-400"}`}
+                  className={`w-2 h-2 rounded-full ${isAutoPlaying && !autoPlayPaused ? "bg-green-400 dark:bg-green-500 animate-pulse" : "bg-muted-foreground/50"}`}
                 ></div>
                 <span>{isAutoPlaying && !autoPlayPaused ? "Auto-playing" : "Paused"}</span>
               </div>

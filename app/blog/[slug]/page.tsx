@@ -388,45 +388,30 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                 .blog-content h1 {
                   font-size: 2.5em;
                   font-weight: bold;
-                  color: #1e293b;
+                  color: var(--foreground);
                   margin: 1.5em 0 0.75em 0;
                   line-height: 1.2;
                 }
                 .blog-content h2 {
                   font-size: 2em;
                   font-weight: bold;
-                  color: #1e293b;
+                  color: var(--foreground);
                   margin: 1.25em 0 0.625em 0;
                   line-height: 1.3;
                 }
-                .blog-content h3 {
-                  font-size: 1.5em;
+                .blog-content h3,
+                .blog-content h4,
+                .blog-content h5,
+                .blog-content h6 {
                   font-weight: bold;
-                  color: #3b82f6;
+                  color: var(--accent);
                   margin: 1em 0 0.5em 0;
                   line-height: 1.4;
                 }
-                .blog-content h4 {
-                  font-size: 1.25em;
-                  font-weight: bold;
-                  color: #3b82f6;
-                  margin: 0.875em 0 0.4375em 0;
-                  line-height: 1.4;
-                }
-                .blog-content h5 {
-                  font-size: 1.125em;
-                  font-weight: bold;
-                  color: #3b82f6;
-                  margin: 0.75em 0 0.375em 0;
-                  line-height: 1.5;
-                }
-                .blog-content h6 {
-                  font-size: 1em;
-                  font-weight: bold;
-                  color: #3b82f6;
-                  margin: 0.625em 0 0.3125em 0;
-                  line-height: 1.5;
-                }
+                .blog-content h3 { font-size: 1.5em; }
+                .blog-content h4 { font-size: 1.25em; margin: 0.875em 0 0.4375em 0; }
+                .blog-content h5 { font-size: 1.125em; margin: 0.75em 0 0.375em 0; }
+                .blog-content h6 { font-size: 1em; margin: 0.625em 0 0.3125em 0; }
                 .blog-content h1:first-child,
                 .blog-content h2:first-child,
                 .blog-content h3:first-child,
@@ -435,73 +420,57 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                 .blog-content h6:first-child {
                   margin-top: 0;
                 }
-                .blog-content p {
-                  color: #374151;
+                .blog-content p,
+                .blog-content ul,
+                .blog-content ol,
+                .blog-content li,
+                .blog-content em {
+                  color: var(--muted-foreground);
                   margin: 1em 0;
                   line-height: 1.7;
                   font-size: 1rem;
                 }
-                .blog-content ul,
-                .blog-content ol {
-                  color: #374151;
-                  margin: 1em 0;
-                  padding-left: 2em;
-                  line-height: 1.7;
-                }
-                .blog-content li {
-                  margin: 0.5em 0;
-                  color: #374151;
-                }
+                .blog-content ul, .blog-content ol { padding-left: 2em; }
+                .blog-content li { margin: 0.5em 0; }
                 .blog-content strong {
                   font-weight: bold;
-                  color: #1f2937;
+                  color: var(--foreground);
                 }
-                .blog-content em {
-                  font-style: italic;
-                  color: #374151;
-                }
-                .blog-content u {
-                  text-decoration: underline;
-                }
-                .blog-content s {
-                  text-decoration: line-through;
-                }
+                .blog-content u { text-decoration: underline; }
+                .blog-content s { text-decoration: line-through; }
                 .blog-content blockquote {
-                  border-left: 4px solid #3b82f6;
+                  border-left: 4px solid var(--accent);
                   padding-left: 1.5em;
                   margin: 1.5em 0;
-                  color: #4b5563;
+                  color: var(--muted-foreground);
                   font-style: italic;
-                  background: #eff6ff;
+                  background: var(--muted);
                   padding: 1em 1.5em;
                   border-radius: 0.5em;
                 }
-                .blog-content blockquote p {
-                  margin: 0.5em 0;
-                }
+                .blog-content blockquote p { margin: 0.5em 0; }
                 .blog-content a {
-                  color: #2563eb;
+                  color: var(--accent);
                   text-decoration: underline;
                   transition: color 0.2s;
                 }
-                .blog-content a:hover {
-                  color: #1d4ed8;
-                }
+                .blog-content a:hover { opacity: 0.9; }
                 .blog-content code {
-                  background-color: #f3f4f6;
-                  color: #dc2626;
+                  background-color: var(--muted);
+                  color: var(--foreground);
                   padding: 0.2em 0.4em;
                   border-radius: 0.25em;
                   font-size: 0.9em;
                   font-family: 'Courier New', monospace;
                 }
                 .blog-content pre {
-                  background-color: #1f2937;
-                  color: #f3f4f6;
+                  background-color: var(--muted);
+                  color: var(--foreground);
                   padding: 1.5em;
                   border-radius: 0.5em;
                   overflow-x: auto;
                   margin: 1.5em 0;
+                  border: 1px solid var(--border);
                 }
                 .blog-content pre code {
                   background-color: transparent;
@@ -513,31 +482,32 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                   height: auto;
                   margin: 2em 0;
                   border-radius: 0.5em;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
                 }
                 .blog-content table {
                   width: 100%;
                   border-collapse: collapse;
                   margin: 1.5em 0;
-                  background: #f9fafb;
+                  background: var(--muted);
                   border-radius: 0.5em;
                   overflow: hidden;
+                  border: 1px solid var(--border);
                 }
                 .blog-content th,
                 .blog-content td {
-                  border: 1px solid #e5e7eb;
+                  border: 1px solid var(--border);
                   padding: 0.75em;
                   text-align: left;
-                  color: #374151;
+                  color: var(--foreground);
                 }
                 .blog-content th {
-                  background-color: #eff6ff;
+                  background-color: var(--muted);
                   font-weight: bold;
-                  color: #1e40af;
+                  color: var(--accent);
                 }
                 .blog-content hr {
                   border: none;
-                  border-top: 2px solid #e5e7eb;
+                  border-top: 2px solid var(--border);
                   margin: 2em 0;
                 }
                 .blog-content iframe {
@@ -761,4 +731,3 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
     </>
   )
 }
-

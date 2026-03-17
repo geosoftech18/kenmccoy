@@ -69,8 +69,8 @@ export default function BlogList({ posts }: BlogListProps) {
                   <Badge 
                     variant={post.status === 'published' ? 'default' : 'secondary'}
                     className={post.status === 'published' 
-                      ? 'bg-green-100 text-green-700 border-green-300' 
-                      : 'bg-yellow-100 text-yellow-700 border-yellow-300'
+                      ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 border-green-300 dark:border-green-700' 
+                      : 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-700'
                     }
                   >
                     {post.status}
@@ -123,6 +123,8 @@ export default function BlogList({ posts }: BlogListProps) {
     </div>
   )
 }
+
+
 
 
 

@@ -94,7 +94,7 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Address Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
+              <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-primary" size={24} />
@@ -125,7 +125,7 @@ export default function ContactPage() {
 
               {/* Contact Details */}
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
+                <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
                   <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                     <Phone className="text-accent" size={20} />
                   </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   <p className="text-muted-foreground">+91-22-42959123</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
+                <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
                   <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                     <Mail className="text-accent" size={20} />
                   </div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
               </div>
 
               {/* Business Hours */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-border/50">
+              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Clock className="text-primary" size={20} />
@@ -168,7 +168,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-border/50">
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50">
               <div className="mb-8">
                 <h3 className="font-red-hat-display text-2xl font-bold text-primary mb-2">Send us a Message</h3>
                 <p className="text-muted-foreground">
@@ -180,13 +180,13 @@ export default function ContactPage() {
               {submitStatus !== 'idle' && (
                 <div className={`p-4 rounded-lg mb-6 flex items-start gap-3 ${
                   submitStatus === 'success' 
-                    ? 'bg-green-50 border border-green-200 text-green-800' 
-                    : 'bg-red-50 border border-red-200 text-red-800'
+                    ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 text-green-800 dark:text-green-200' 
+                    : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 text-red-800 dark:text-red-200'
                 }`}>
                   {submitStatus === 'success' ? (
-                    <CheckCircle className="text-green-600 mt-0.5 flex-shrink-0" size={20} />
+                    <CheckCircle className="text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" size={20} />
                   ) : (
-                    <AlertCircle className="text-red-600 mt-0.5 flex-shrink-0" size={20} />
+                    <AlertCircle className="text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" size={20} />
                   )}
                   <p className="text-sm">{submitMessage}</p>
                 </div>

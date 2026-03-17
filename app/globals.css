@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark *), @media (prefers-color-scheme: dark));
 
 :root {
   --background: #ffffff;
@@ -22,6 +22,8 @@
   --radius: 0.5rem;
   --card: #ffffff;
   --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
   font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -43,6 +45,8 @@
   --color-ring: var(--ring);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
   --font-sans: var(--font-red-hat-display);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-red-hat-display);
@@ -68,7 +72,54 @@
     --ring: #60a5fa;
     --card: #1e293b;
     --card-foreground: #f8fafc;
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
   }
+}
+
+/* About page: always use light theme (same look in light and dark mode) */
+.about-page-light {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #1e293b;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #3b82f6;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+}
+
+/* Force header to stay light and readable when on About page (dark mode fix) */
+.about-page-light header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+.about-page-light header a,
+.about-page-light header button,
+.about-page-light header [class*="text-foreground"] {
+  color: #171717 !important;
+}
+.about-page-light header a:hover,
+.about-page-light header button:hover {
+  color: #3b82f6 !important;
+}
+.about-page-light header nav a:hover {
+  color: #3b82f6 !important;
+}
+.about-page-light header .bg-accent {
+  background-color: #3b82f6 !important;
 }
 
 body {

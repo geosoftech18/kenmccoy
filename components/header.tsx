@@ -14,7 +14,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <header className="sticky top-0 z-50 bg-background/95 dark:bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-10 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -34,46 +34,46 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-1">
             <Link 
               href="/" 
-              className="relative px-4 py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium group"
+              className="relative px-4 py-2 text-lg text-foreground hover:text-accent transition-colors duration-200 font-medium group"
             >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               href="/About" 
-              className="relative px-4 py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium group"
+              className="relative px-4 py-2 text-lg text-foreground hover:text-accent transition-colors duration-200 font-medium group"
             >
               About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               href="/Services" 
-              className="relative px-4 py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium group"
+              className="relative px-4 py-2 text-lg text-foreground hover:text-accent transition-colors duration-200 font-medium group"
             >
               Services
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               href="https://www.linkedin.com/in/kenmccoyconsulting" target="_blank" 
-              className="relative px-4 py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium group"
+              className="relative px-4 py-2 text-lg text-foreground hover:text-accent transition-colors duration-200 font-medium group"
             >
               News & Media
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               href="/blog" 
               prefetch={true}
-              className="relative px-4 py-2 font-medium text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200  group"
+              className="relative px-4 py-2 font-medium text-lg text-foreground hover:text-accent transition-colors duration-200 group"
             >
               Blog
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               href="/Contact" 
-              className="relative px-4 py-2 font-medium text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200  group"
+              className="relative px-4 py-2 font-medium text-lg text-foreground hover:text-accent transition-colors duration-200 group"
             >
               Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
 
@@ -83,14 +83,14 @@ export default function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleMobileMenu}
-              className="h-12 w-12 rounded-lg hover:bg-gray-100 transition-all duration-300"
+              className="h-12 w-12 rounded-lg hover:bg-muted transition-all duration-300"
               aria-label="Toggle mobile menu"
             >
               <div className={`transition-all duration-300 ${isMobileMenuOpen ? "rotate-180" : "rotate-0"}`}>
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-gray-700" />
+                  <X className="w-6 h-6 text-foreground" />
                 ) : (
-                  <Menu className="w-6 h-6 text-gray-700" />
+                  <Menu className="w-6 h-6 text-foreground" />
                 )}
               </div>
             </Button>
@@ -104,35 +104,35 @@ export default function Header() {
           }`}
         >
           <div
-            className={`border-t border-gray-200 bg-white/95 backdrop-blur-sm rounded-b-lg shadow-lg transform transition-all duration-500 ease-in-out ${
+            className={`border-t border-border bg-card/95 backdrop-blur-sm rounded-b-lg shadow-lg transform transition-all duration-500 ease-in-out ${
               isMobileMenuOpen ? "translate-y-0" : "-translate-y-4"
             }`}
           >
             <nav className="flex flex-col space-y-1 pt-4 px-4">
               <Link 
                 href="/" 
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/About" 
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
                 href="/Services" 
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 href="https://www.linkedin.com/in/kenmccoyconsulting" target="_blank" 
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 News & Media
@@ -140,14 +140,14 @@ export default function Header() {
               <Link 
                 href="/blog" 
                 prefetch={true}
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
               </Link>
               <Link 
                 href="/Contact" 
-                className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-foreground hover:text-accent hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

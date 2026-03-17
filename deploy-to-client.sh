@@ -112,3 +112,5 @@ echo "📝 Check logs with: ssh $USERNAME@$SERVER_IP 'pm2 logs kenmccoy'"
 
 
 
+
+

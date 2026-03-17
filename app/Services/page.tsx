@@ -96,7 +96,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#3b82f6]/5 to-accent/5" />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-[#3b82f6]/10 text-[#3b82f6] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4" />
               Professional Services
             </div>
@@ -119,8 +119,8 @@ export default function ServicesPage() {
                 onClick={() => setActiveService(index)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 ${
                   activeService === index
-                    ? "bg-[#3b82f6] text-white shadow-lg scale-105"
-                    : "bg-white text-foreground hover:bg-muted border border-border"
+                    ? "bg-accent text-accent-foreground shadow-lg scale-105"
+                    : "bg-card text-foreground hover:bg-muted border border-border"
                 }`}
               >
                 {service.icon}
@@ -136,8 +136,8 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="p-3 bg-[#3b82f6]/10 rounded-full text-[#3b82f6]">{services[activeService].icon}</div>
-              <h2 className="font-red-hat-display text-2xl md:text-4xl lg:text-5xl font-bold text-[#3b82f6]">
+              <div className="p-3 bg-accent/10 rounded-full text-accent">{services[activeService].icon}</div>
+              <h2 className="font-red-hat-display text-2xl md:text-4xl lg:text-5xl font-bold text-accent">
                 {services[activeService].title}
               </h2>
             </div>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
             {services[activeService].items.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 shadow-sm border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+                className="group bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-accent/10 rounded-lg text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
@@ -171,7 +171,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border">
-                  <button className="w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 group-hover:scale-105" onClick={() => window.location.href = '/Contact'}>
+                  <button className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 group-hover:scale-105" onClick={() => window.location.href = '/Contact'}>
                     Learn More
                   </button>
                 </div>
@@ -182,9 +182,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-primary to-accent text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-primary to-accent dark:from-slate-800 dark:via-slate-700 dark:to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="p-4 bg-white/10 rounded-full inline-flex mb-6">
+          <div className="p-4 bg-white/20 dark:bg-white/10 rounded-full inline-flex mb-6">
             <Target className="w-8 h-8" />
           </div>
           <h2 className="font-red-hat-display text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your Organization?</h2>
@@ -193,11 +193,11 @@ export default function ServicesPage() {
             teams.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/Contact" className="bg-white text-primary px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors duration-300">
+            <a href="/Contact" className="bg-white text-primary dark:text-[#1e293b] px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors duration-300">
               Schedule Consultation
             </a>
             <button 
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:text-black duration-300 flex items-center gap-2"
+              className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-primary dark:hover:text-[#1e293b] transition-colors duration-300 flex items-center gap-2"
               onClick={() => {
                 const link = document.createElement('a');
                 link.href = '/Ken%20McCoy%20Brochure%202026.pdf';
