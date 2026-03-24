@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock, Send, Globe, Linkedin, Twitter, Facebook, Instagram, ArrowRight } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, Globe, Linkedin, Facebook, Instagram, ArrowRight } from "lucide-react"
 import { useState } from "react"
 
 export default function Footer() {
@@ -187,21 +187,21 @@ export default function Footer() {
                   <Linkedin size={18} className="text-gray-300 group-hover:text-white" />
                 </a>
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-blue-400 rounded-lg flex items-center justify-center transition-all duration-200 group"
-                  aria-label="Twitter"
+                  href="https://x.com/Info_KenMcCoy"
+                  className="w-10 h-10 bg-gray-700 hover:bg-black rounded-lg flex items-center justify-center transition-all duration-200 group"
+                  aria-label="X"
                 >
-                  <Twitter size={18} className="text-gray-300 group-hover:text-white" />
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="w-[18px] h-[18px] fill-gray-300 group-hover:fill-white"
+                  >
+                    <path d="M18.901 1.153h3.68l-8.04 9.189L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.472l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.291 19.494h2.039L6.486 3.244H4.298z" />
+                  </svg>
                 </a>
+               
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-blue-800 rounded-lg flex items-center justify-center transition-all duration-200 group"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={18} className="text-gray-300 group-hover:text-white" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/kenmccoy_consulting/"
                   className="w-10 h-10 bg-gray-700 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group"
                   aria-label="Instagram"
                 >
