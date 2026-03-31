@@ -183,6 +183,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/kenmccoyconsulting"
                   className="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group"
                   aria-label="LinkedIn"
+                  target="_blank"
                 >
                   <Linkedin size={18} className="text-gray-300 group-hover:text-white" />
                 </a>
@@ -190,6 +191,7 @@ export default function Footer() {
                   href="https://x.com/Info_KenMcCoy"
                   className="w-10 h-10 bg-gray-700 hover:bg-black rounded-lg flex items-center justify-center transition-all duration-200 group"
                   aria-label="X"
+                  target="_blank"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -204,8 +206,17 @@ export default function Footer() {
                   href="https://www.instagram.com/kenmccoy_consulting/"
                   className="w-10 h-10 bg-gray-700 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group"
                   aria-label="Instagram"
+                  target="_blank"
                 >
                   <Instagram size={18} className="text-gray-300 group-hover:text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group"
+                  aria-label="Facebook"
+                  target="_blank"
+                >
+                  <Facebook size={18} className="text-gray-300 group-hover:text-white" />
                 </a>
               </div>
             </div>
